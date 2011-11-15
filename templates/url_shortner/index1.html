@@ -1,0 +1,29 @@
+<html>
+<body>
+	<form action="/url_handle/" method="post">
+	{% csrf_token %}
+	<table>
+		<tr>
+		<td width=250px>Insert Url</td>
+		<td><input type="text" name="url" /></td>
+		</tr>
+
+		<tr><td></td>
+		<td><input type="submit" name="get_url" value="Submit" />
+		<input type="reset" name="clear" /></td>
+		</tr>
+	</table>
+
+		{% if show_url %}
+		<table><tr>
+		<td>Your new URL:</td>
+		<td><a href="/url_handle/redirect/{{ word }}/" name='link'><h2> {{ appended_url }} </h2></a></td>
+		</tr></table>
+		{% endif %}
+		
+
+
+	</form>
+</body>
+</html>
+
